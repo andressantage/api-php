@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+/*         // config.body = JSON.stringify();
+let config = {
+    headers:new Headers({
+        "Content-Type": "application/json"//espera que el API o servidor le devuelva un JSON // es para decirle que la informacion que le va a mandar es json
+    }), 
+};
+const getUserAll = async()=>{
+    config.method = "GET";//para designar el metodo que se ejecutara
+    let res = await ( await fetch("http://localhost/tablasdql/uploads/camper",config)).json();//await es para esperar que algo suceda
+    //.json() convierte el archivo a json
+    console.log(res);
+}
+getUserAll() */
+
+const getUserAll = async()=>{
+    let res = await ( await fetch("http://localhost/tablasdql/uploads/usuarios")).json();//await es para esperar que algo suceda
+    //.json() convierte el archivo a json
+    console.log(res);
+}
+getUserAll() 
+
+/* document.addEventListener("DOMContentLoaded", async function(e) {
+  try {
+    let conexion = await fetch('http://localhost/apiRest-master/apiRest-master/apiRest-master/backend/controles/campers.php?op=GetAll');
+    if (!conexion.ok) {
+      throw new Error('Error al obtener los datos');
+    }
+    let data = await conexion.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}); */
+    </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="main.js" async></script>
+
+	<script src="app.js" defer></script>
+
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" defer></script>
+	<title>AdminSite</title>
+	<style>
+		.action-icon{
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+	</style>
+</head>
+<body>
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand"><i class='bx bxs-smile icon'></i> AdminSite</a>
+		<ul class="side-menu">
+			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li class="divider" data-text="CLIENTES">CLIENTES</li>
+			<!-- <li>
+				<a href="#"><i class='bx bxs-inbox icon' ></i> Elements <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Alert</a></li>
+					<li><a href="#">Badges</a></li>
+					<li><a href="#">Breadcrumbs</a></li>
+					<li><a href="#">Button</a></li>
+				</ul>
+			</li> -->
+			<li><a href="areas.html"><i class="bx bxs-chart icon"></i> areas</a></li>
+			<li><a href="countries.html"><i class="bx bxs-chart icon"></i> countries</a></li>
+			<li><a href="journey.html"><i class="bx bxs-chart icon"></i> journey</a></li>
+			<li><a href="levels.html"><i class="bx bxs-chart icon"></i> levels</a></li>
+			<li><a href="locations.html"><i class="bx bxs-chart icon"></i> locations</a></li>
+			<li><a href="personal_ref.html"><i class="bx bxs-chart icon"></i> personal_ref</a></li>
+			<li><a href="position.html"><i class="bx bxs-chart icon"></i> position</a></li>
+			<li><a href="subjects.html"><i class="bx bxs-chart icon"></i> subjects</a></li>
+			<li><a href="team_educators.html"><i class="bx bxs-chart icon"></i> team_educators</a></li>
+			<li><a href="work_reference.html"><i class="bx bxs-chart icon"></i> work_reference</a></li>
+
+			<li class="divider" data-text="table and forms">Table and forms</li>
+			<li><a href="#"><i class='bx bx-table icon' ></i> Tables</a></li>
+			<li>
+				<a href="#"><i class='bx bxs-notepad icon' ></i> Forms <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Basic</a></li>
+					<li><a href="#">Select</a></li>
+					<li><a href="#">Checkbox</a></li>
+					<li><a href="#">Radio</a></li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<form action="#">
+				
+			</form>
+			
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">Dashboard</h1>
+			<ul class="breadcrumbs">
+				<li><a href="#">Clientes</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active" id="comm"></a></li>
+			</ul>
+			
+			<div class="d-flex justify-content-start align-items-center w-100 my-2">
+				<button  data-toggle="modal" data-target="#exampleModal" id="agregar" style="font-size: 1.5rem;" class="btn btn-success py-0">+</button>
+			</div>
+
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h5 class="modal-title" id="exampleModalLabel">Título del popup</h5>
+					  <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					  </button>
+					</div>
+					<div class="modal-body">
+						<form id="myForm">
+							<div class="form-group my-2">
+							  <input type="text" class="form-control" name="nombre" placeholder="name_journey">
+							</div>
+							<div class="form-group my-2">
+								<input type="text" class="form-control" name="nombre" placeholder="check_in">
+							</div>
+							<div class="form-group my-2">
+							<input type="text" class="form-control" name="nombre" placeholder="check_out">
+							</div>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					  <input type="submit" class="btn btn-primary" value="Agregar">
+					</div>
+
+					</form>
+				  </div>
+				</div>
+			  </div>
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+					<th scope="col">Celular</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider" id="contenido">
+                  
+                </tbody>
+              </table>
+
+			  
+			  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Título del popup</h5>
+						<button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form id="myForm1">
+							<div class="form-group my-2">
+								<input type="text" class="form-control" name="nombre" id="nombrePUT">
+							</div>
+							<div class="form-group my-2">
+								<input type="text" class="form-control" name="nombre" id="nombrePUT">
+							</div>
+							<div class="form-group my-2">
+								<input type="text" class="form-control" name="nombre" id="nombrePUT">
+							</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+						<input type="submit" class="btn btn-primary" value="Modificar">
+					</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- NAVBAR -->
+	<script>
+		localStorage.setItem("tabla","journey")
+		let comm=document.getElementById("comm")
+		comm.innerHTML=localStorage.getItem("tabla")
+	</script>
+</body>
+</html>
